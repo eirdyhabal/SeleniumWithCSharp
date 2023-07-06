@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebDriverManager.DriverConfigs.Impl;
+using WebDriverManager;
 
 namespace SeleniumWithCSharp.Helpers
 {
@@ -12,7 +14,13 @@ namespace SeleniumWithCSharp.Helpers
     {
         public static IWebDriver Chrome()
         {
-            return new ChromeDriver();
+            ChromeOptions option = new ChromeOptions();
+            option.AddArguments("start-maximized");
+
+            new DriverManager().SetUpDriver(new ChromeConfig());
+            Console.WriteLine("Setup");
+
+            return new ChromeDriver(option);
         }
     }
 }

@@ -9,6 +9,6 @@ namespace SeleniumWithCSharp.Helpers
 {
     public class ChromeDriverHelper
     {
-        public static IWebDriver Driver { get; set; }
+        public IWebDriver Driver { get; set; }
     }
 }
